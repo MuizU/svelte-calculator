@@ -1,32 +1,44 @@
 <script>
   import Navbar from "./Navbar.svelte";
+  let firstNum = [];
+  let secondNum = [];
+  let sum = 0;
+  let isAddClicked = false;
+  const addToFirst = (val) => (firstNum = [...firstNum, val]);
+  const addToSecond = (val) => (secondNum = [...secondNum, val]);
+  const calculate = () =>
+    float32(firstNum, toString()) + float32(secondNum.toString());
+  const appendNum = (val) => {
+    if (!!isAddClicked) {
+      addToFirst(val);
+    } else {
+      addToSecond(val);
+    }
+  };
 </script>
 
 <Navbar />
 <main>
   <div class="calculator-grid">
     <div class="output">
-      <div class="previous-operand" />
-      <div class="current-operand" />
+      <div class="previous-operand">{firstNum.toString()}</div>
+      <div class="current-operand">{secondNum.toString()}</div>
     </div>
     <button class="span-two">AC</button>
     <button>DEL</button>
-    <button>÷</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>*</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>+</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>-</button>
+    <button on:click={() => appendNum(1)}>1</button>
+    <button on:click={() => appendNum(2)}>2</button>
+    <button on:click={() => appendNum(3)}>3</button>
+    <button on:click={() => appendNum(4)}>4</button>
+    <button on:click={() => appendNum(5)}>5</button>
+    <button on:click={() => appendNum(6)}>6</button>
+    <button on:click={(isAddClicked = false)}>+</button>
+    <button on:click={() => appendNum(7)}>7</button>
+    <button on:click={() => appendNum(8)}>8</button>
+    <button on:click={() => appendNum(9)}>9</button>
     <button>.</button>
-    <button>0</button>
-    <button class="span-two">=</button>
+    <button on:click={() => appendNum(0)}>0</button>
+    <button on:click={() => calculate()} class="span-two">=</button>
   </div>
 </main>
 
