@@ -15,6 +15,10 @@
       addToSecond(val);
     }
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6919ef669ddcdf72224dc38c27840ebf9503a31
 </script>
 
 <Navbar />
@@ -88,6 +92,7 @@
     background: linear-gradient(to right, #cbce91ff, #ea738dff);
   }
 
+<<<<<<< HEAD
   .calculator-grid {
     display: grid;
     justify-content: center;
@@ -104,10 +109,13 @@
     outline: none;
     background-color: rbga(255, 255, 255, 0.75);
   }
+=======
+>>>>>>> f6919ef669ddcdf72224dc38c27840ebf9503a31
 
   .calculator-grid > button:hover {
     background-color: #a9a9a9;
   }
+<<<<<<< HEAD
 
   .span-two {
     grid-column: span 2;
@@ -136,4 +144,14 @@
     color: white;
     font-size: 2.5rem;
   }
+=======
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+  }
+
+>>>>>>> f6919ef669ddcdf72224dc38c27840ebf9503a31
 </style>
